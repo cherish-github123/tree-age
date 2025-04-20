@@ -1,0 +1,105 @@
+@use "sass:color";
+
+.login-container {
+  $primary-green: #2d5f4d;
+  $light-green: linear-gradient(145deg, #e8f5e9 0%, #c8e6c9 100%);
+
+  background: url('../../../public/image/tree-rings.jpg') center/cover;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    mix-blend-mode: multiply;
+  }
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .login-form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(46, 91, 73, 0.1);
+    width: 480px;
+
+    .login-title h2 {
+      color: $primary-green;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .ant-input,
+    :where(.ant-input-password) {
+      border: 2px solid #c8e6c9;
+      border-radius: 6px;
+  
+      
+      &:hover {
+        border-color: $primary-green;
+      }
+    
+      .ant-input {
+        border: none !important;
+        box-shadow: none !important;
+      }
+    
+      &:focus-within {
+        border-color: $primary-green;
+        box-shadow: 0 0 0 2px rgba(45, 95, 77, 0.1);
+      }
+    }
+
+    .login-button .ant-btn {
+      background: $primary-green;
+      border-color: $primary-green;
+      color: white;
+      width: 100%;
+      height: 40px;
+      font-size: 16px;
+      &:hover {
+        background: color.adjust($primary-green, $lightness: -10%);
+        border-color: color.adjust($primary-green, $lightness: -10%);
+      }
+    }
+  }
+
+  .register-link {
+    margin-top: 24px;
+    text-align: center;
+    z-index: 1;
+    span {
+      cursor: pointer;
+    }
+  }
+}
+
+.login-form {
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 50%; // 设置表单宽度为屏幕的50%
+  height: 50%; // 设置表单高度为屏幕的50%
+  display: flex; // 使用Flexbox布局
+  flex-direction: column; // 垂直排列子元素
+  justify-content: space-between; // 子元素在主轴上均匀分布
+  gap: 16px; // 添加表单项之间的间距
+}
+
+.login-title {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.login-button {
+   text-align: center;
+}
+
+.register-link {
+  text-align: center;
+}
